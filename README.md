@@ -37,8 +37,7 @@
     -   학습용과 테스트용 데이터를 각각 병합합니다.
     -   **'일시'**와 **'온도'** 열만 추출하고, 중복된 시간대의 데이터는 온도의 평균값으로 처리하여 정제합니다.
     -   최종적으로 `processed_temperature_only_TRAIN.csv` (학습용)와 `processed_temperature_only_TEST.csv` (예측용) 파일을 생성합니다.
-
-<img width="556" height="435" alt="1_peak_temp" src="https://github.com/user-attachments/assets/7175c50d-9312-4162-9da6-f17bec453688" />
+<img width="767" height="387" alt="image" src="https://github.com/user-attachments/assets/9cded849-a39f-432f-8507-58a8e271e27f" />
 
 ---
 
@@ -59,8 +58,20 @@
 -   **프로세스**:
     1.  **성능 검증 (`3_BenchMark.py`)**: 학습 데이터를 훈련/테스트 세트로 분리하여 모델을 학습시킨 후, 예측 정확도를 평가합니다. 예측 결과와 실제 정답을 시각적으로 비교하여 모델의 성능을 직관적으로 확인합니다.
     2.  **최종 모델 학습 및 저장 (`4_Train_and_save_model.py`)**: 검증이 완료되면 전체 학습 데이터를 사용하여 모델을 최종적으로 학습시킵니다. 학습된 모델은 `xgboost_model.joblib`, 라벨 정보는 `label_encoder.joblib` 파일로 저장하여 재사용이 가능하도록 만듭니다.
- 
-<img width="1770" height="495" alt="3" src="https://github.com/user-attachments/assets/59c8be93-827d-4a7c-90ed-861b3831c14a" />
+
+-   **학습 결과**:
+```text
+              precision    recall  f1-score   support
+
+        Rest       0.88      0.98      0.92     12937
+         Run       0.94      0.71      0.81      6190
+
+    accuracy                           0.89     19127
+   macro avg       0.91      0.85      0.87     19127
+weighted avg       0.90      0.89      0.89     19127
+```
+
+<img width="1770" height="495" alt="3" src="https://github.com/user-attachments/assets/59c8be93-827d-4a7c-90ed-861b3831c14a">
 <img width="1920" height="975" alt="2_Figure_1_MA" src="https://github.com/user-attachments/assets/78d0cbbc-9ae8-4e1b-86d9-268ed69d588f" />
 
 ---
