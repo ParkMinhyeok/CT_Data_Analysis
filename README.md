@@ -83,3 +83,42 @@
 
 ```bash
 pip install pandas matplotlib scikit-learn xgboost joblib openpyxl
+```
+
+### **2. 폴더 구조**
+프로젝트를 실행하기 위해 아래와 같은 폴더 구조를 권장합니다.
+```
+/
+├── CT_2025-03to06/         # 원본 학습 데이터 (CSV)
+│   └── data1.csv
+├── Test Data/              # 원본 테스트 데이터 (CSV)
+│   └── test_data1.csv
+├── labeled_data.json       # Label Studio 라벨링 결과 파일
+├── 0_Moving Average.py
+├── 1_Preprocess.py
+├── 2_Create_training_data.py
+├── 3_BenchMark.py
+├── 4_Train_and_save_model.py
+└── 5_Load_and_predict.py
+```
+### **3. 실행 순서**
+아래 순서대로 파이썬 스크립트를 실행하세요.
+```
+# 1. 데이터 스무딩
+python 0_Moving Average.py
+
+# 2. 데이터 전처리
+python 1_Preprocess.py
+
+# 3. 학습 데이터 생성
+python 2_Create_training_data.py
+
+# 4. 모델 성능 검증
+python 3_BenchMark.py
+
+# 5. 최종 모델 학습 및 저장
+python 4_Train_and_save_model.py
+
+# 6. 새로운 데이터 예측 및 분석
+python 5_Load_and_predict.py
+```
