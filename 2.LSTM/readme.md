@@ -2,7 +2,7 @@
 
 ## 📊 프로젝트 개요
 
-이전 연구([XGBoost 기반 모델](https://github.com/ParkMinhyeok/CT_Data_Analysis/tree/main))에서는 XGBoost를 활용하여 장비의 가동 상태를 성공적으로 분류했습니다. 본 프로젝트는 여기서 한 걸음 더 나아가, 데이터의 **시간적 연속성(Temporal Dependency)을 학습**할 수 있는 **LSTM(Long Short-Term Memory)** 모델을 도입하여 예측 성능을 고도화하는 것을 목표로 합니다.
+이전 연구([XGBoost 기반 모델](https://github.com/ParkMinhyeok/CT_Data_Analysis/tree/main))에서는 XGBoost를 활용하여 장비의 가동 상태를 성공적으로 분류했습니다. 본 프로젝트는 여기서 한 걸음 더 나아가, 데이터의 **시간적 연속성(Temporal Dependency)을 학습**할 수 있는 **LSTM(Long Short-Term Memory)** 모델을 도입하여 예측 성능을 고도화하는 것을 목표로 합니다. (전처리는 같은 부분은 이전 연구와 많은 부분을 공유한다.)
 
 XGBoost가 개별 데이터 포인트의 특징에 집중하는 반면, LSTM은 시계열 데이터의 순차적인 **패턴과 맥락**을 학습합니다. 이를 통해 온도 변화의 '흐름'을 파악하여 더 정확하고 안정적인 가동 상태 분류가 가능할 것이라는 가설을 검증하고, 성공적으로 성능을 향상시켰습니다.
 
